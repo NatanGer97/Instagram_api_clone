@@ -28,7 +28,7 @@ def get_all_posts(db: Session = Depends(get_db)):
     return postRepo.get_all_posts(db=db)
 
 @router.post('/image')
-def upload_image(image: UploadFile = File(...),current_user: UserAuth = Depends(get_current_user)):
+def upload_image(image: UploadFile = File(...), current_user: UserAuth = Depends(get_current_user)):
     letters = string.ascii_letters
     rand_str = ''.join(random.choice(letters) for _ in range(3))
     new_prefix = f'_{rand_str}.'

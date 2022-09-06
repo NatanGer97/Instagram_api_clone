@@ -18,4 +18,4 @@ def create(db: Session, req: CommentDAO):
     return newComment
 
 def get_all(db: Session, post_id: int):
-    return db.query(DbComment).filter(DbComment.id == post_id).all()
+    return db.query(DbComment).filter(DbComment.post_id == post_id).all()
